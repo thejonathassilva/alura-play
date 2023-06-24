@@ -2,7 +2,7 @@ import { connectApi } from './connect-api.js'
 
 const list = document.querySelector("[data-list]");
 
-function buildCArd(title, description, url, image) {
+export default function buildCArd(title, description, url, image) {
   const video = document.createElement("li");
   video.className = "videos__item";
   video.innerHTML = `<iframe width="100%" height="72%" src="${url}"

@@ -18,14 +18,21 @@ async function createVideo(title, description, url, image) {
       image: image
     })
   });
-
-  console.log(await connection.json())
-
+  
   const convertedConnection = await connection.json();
+
+  return convertedConnection;
+}
+
+async function searchVideo(termoDeBusca) {
+  const connection = await fetch(`http://localhost:3000/videos?q=${termoDeBusca}`);
+  const convertedConnection = connection.json();
+
   return convertedConnection;
 }
 
 export const connectApi = {
   videosList,
-  createVideo
+  createVideo,
+  searchVideo
 }
