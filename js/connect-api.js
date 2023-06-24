@@ -19,6 +19,8 @@ async function createVideo(title, description, url, image) {
     })
   });
 
+  console.log(await connection.json())
+
   const convertedConnection = await connection.json();
   return convertedConnection;
 }
